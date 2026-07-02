@@ -1,0 +1,46 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{% block title %}Gezira College - Student Identity{% endblock %}</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Work+Sans:wght@600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+<script>
+    tailwind.config = {
+        theme: {
+            extend: {
+                colors: {
+                    primary: "#000666",
+                    secondary: "#0056C5",
+                    background: "#F7F9FC",
+                },
+                fontFamily: {
+                    heading: ["Work Sans", "sans-serif"],
+                    body: ["Inter", "sans-serif"],
+                },
+            },
+        },
+    };
+</script>
+<style>
+    body { font-family: "Inter", sans-serif; }
+    .font-heading { font-family: "Work Sans", sans-serif; }
+    .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    .id-card-shadow {
+        box-shadow: 0 4px 12px rgba(0, 6, 102, 0.08);
+    }
+</style>
+</head>
+
+<body class="bg-background text-[#191C1E] min-h-screen">
+<main class="max-w-2xl mx-auto px-4 md:px-8 py-10">
+    {% block content %}{% endblock %}
+</main>
+</body>
+</html>

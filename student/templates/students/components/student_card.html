@@ -1,0 +1,66 @@
+{% load static %}
+
+<section class="flex flex-col items-center justify-center py-10">
+<div class="w-full max-w-[380px] bg-white rounded-xl overflow-hidden id-card-shadow border border-gray-200 flex flex-col">
+
+    <!-- Card Header -->
+    <div class="bg-primary p-6 text-center text-white">
+        <div class="uppercase font-bold text-base tracking-tight mb-0.5">Gezira College</div>
+        <div class="text-[11px] font-normal opacity-90 italic">of Medical Sciences &amp; Technology</div>
+    </div>
+
+    <!-- Photo -->
+    <div class="flex flex-col items-center pt-8 pb-4">
+        <div class="w-36 h-44 rounded-xl border-4 border-primary/10 overflow-hidden bg-gray-100 p-1 shadow-inner">
+            {% if student.student_photo %}
+                <img class="w-full h-full object-cover rounded-lg" src="{{ student.student_photo.url }}" alt="{{ student.student_name }}">
+            {% else %}
+                <div class="w-full h-full flex items-center justify-center text-gray-400 text-xs text-center rounded-lg bg-gray-100">
+                    No Photo
+                </div>
+            {% endif %}
+        </div>
+    </div>
+
+    <!-- Name and ID -->
+    <div class="text-center px-6">
+        <h3 class="text-xl font-bold text-primary mb-1" dir="auto">{{ student.student_name }}</h3>
+        <div class="flex items-center justify-center gap-1 text-gray-600 font-semibold">
+            <span class="text-xs uppercase tracking-wider">ID:</span>
+            <span class="text-sm">{{ student.student_id }}</span>
+        </div>
+    </div>
+
+    <!-- Divider -->
+    <div class="px-8 my-4">
+        <div class="h-px bg-gray-200 w-full"></div>
+    </div>
+
+    <!-- Details -->
+    <div class="px-8 pb-8 space-y-2 text-center">
+        <div class="grid grid-cols-1 gap-1">
+            <div class="text-sm text-gray-600 flex items-center justify-center gap-2">
+                <span class="font-bold">College:</span>
+                <span>{{ student.college }}</span>
+            </div>
+            <div class="text-sm text-gray-600 flex items-center justify-center gap-2">
+                <span class="font-bold">Batch:</span>
+                <span>{{ student.batch }}</span>
+            </div>
+            <div class="text-sm text-gray-600 flex items-center justify-center gap-2">
+                <span class="font-bold">Semester:</span>
+                <span>{{ student.semester }}</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Logo Footer -->
+    <div class="mt-auto p-4 flex justify-center bg-gray-50">
+        <div class="w-16 h-16 p-1 bg-white rounded-lg shadow-sm border border-gray-200">
+            <img class="w-full h-full object-contain" src="{% static 'assets/logo.png' %}" alt="College Logo">
+        </div>
+    </div>
+
+    <div class="h-2 bg-primary w-full"></div>
+</div>
+</section>
